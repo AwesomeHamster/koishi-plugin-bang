@@ -1,0 +1,16 @@
+name: Publish
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if: ${{ false }} # disable this workflow by default, remove this line only if you're ready to publish your package!
+    steps:
+      - uses: actions/checkout@v3
+      - uses: AwesomeHamster/actions-publish@master
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          test: yarn test

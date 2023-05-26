@@ -1,0 +1,91 @@
+{
+  "name": "koishi-template",
+  "version": "1.0.0",
+  "description": "A template repository for creating koishi plugins",
+  "keywords": [
+    "bot",
+    "qqbot",
+    "chatbot",
+    "plugin",
+    "koishi",
+    "koishijs"
+  ],
+  "author": {
+    "name": "Maiko Tan",
+    "email": "maiko.tan.coding@gmail.com"
+  },
+  "homepage": "https://github.com/AwesomeHamster/koishi-template",
+  "license": "MIT",
+  "main": "dist/index.bundle.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AwesomeHamster/koishi-template.git"
+  },
+  "scripts": {
+    "build": "constructeur build && tsc --emitDeclarationOnly",
+    "dev": "constructeur build --minify false && tsc --emitDeclarationOnly",
+    "clean": "rimraf dist/*",
+    "test": "mocha -r ts-node/register -r yml-register --extension .spec.ts ./__tests__",
+    "lint": "eslint src/**/*.ts && yarn prettier --check",
+    "format": "yarn prettier --write",
+    "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!dist/**/*'"
+  },
+  "bugs": {
+    "url": "https://github.com/AwesomeHamster/koishi-template/issues"
+  },
+  "koishi": {
+    "description": {
+      "en": "Koishi Template",
+      "zh": "Koishi Template"
+    },
+    "service": {
+      "required": [],
+      "optional": [],
+      "implements": []
+    },
+    "locales": [
+      "en",
+      "zh"
+    ],
+    "recommendeds": []
+  },
+  "prettier": "@hamster-bot/prettier-config",
+  "peerDependencies": {
+    "koishi": "^4.8.5"
+  },
+  "devDependencies": {
+    "@hamster-bot/constructeur": "*",
+    "@hamster-bot/eslint-config": "*",
+    "@hamster-bot/prettier-config": "*",
+    "@koishijs/plugin-database-memory": "^1.4.2",
+    "@koishijs/plugin-mock": "^2.0.2",
+    "@types/chai": "^4.3.3",
+    "@types/fs-extra": "^9.0.13",
+    "@types/js-yaml": "^4.0.5",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "^18.7.9",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "chai": "^4.3.6",
+    "eslint": "^8.19.0",
+    "eslint-import-resolver-typescript": "^3.4.1",
+    "fs-extra": "^10.1.0",
+    "js-yaml": "^4.1.0",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.3",
+    "yml-register": "^1.1.0"
+  }
+}
