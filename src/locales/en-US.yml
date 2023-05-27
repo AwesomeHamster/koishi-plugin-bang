@@ -1,0 +1,7 @@
+bang:
+  errors:
+    no-history: There is no command history.
+
+    invalid-index: Invalid index for fetching command history.
+
+    command-not-found: Command not found.

@@ -1,20 +1,22 @@
 {
-  "name": "koishi-template",
+  "name": "koishi-plugin-bang",
   "version": "1.0.0",
-  "description": "A template repository for creating koishi plugins",
+  "description": "bang (!) command implementation in Koishi",
   "keywords": [
     "bot",
     "qqbot",
     "chatbot",
     "plugin",
     "koishi",
-    "koishijs"
+    "koishijs",
+    "linux-command",
+    "bang"
   ],
   "author": {
     "name": "Maiko Tan",
     "email": "maiko.tan.coding@gmail.com"
   },
-  "homepage": "https://github.com/AwesomeHamster/koishi-template",
+  "homepage": "https://github.com/AwesomeHamster/koishi-plugin-bang",
   "license": "MIT",
   "main": "dist/index.bundle.js",
   "directories": {
@@ -29,7 +31,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AwesomeHamster/koishi-template.git"
+    "url": "git+https://github.com/AwesomeHamster/koishi-plugin-bang.git"
   },
   "scripts": {
     "build": "constructeur build && tsc --emitDeclarationOnly",
@@ -41,15 +43,15 @@
     "prettier": "prettier '**/*.{js,ts,json,yml,yaml,md}' '!dist/**/*'"
   },
   "bugs": {
-    "url": "https://github.com/AwesomeHamster/koishi-template/issues"
+    "url": "https://github.com/AwesomeHamster/koishi-plugin-bang/issues"
   },
   "koishi": {
     "description": {
-      "en": "Koishi Template",
-      "zh": "Koishi Template"
+      "en": "bang (!) command implementation",
+      "zh": "bang (!) 指令实现"
     },
     "service": {
-      "required": [],
+      "required": ["database"],
       "optional": [],
       "implements": []
     },
@@ -61,7 +63,7 @@
   },
   "prettier": "@hamster-bot/prettier-config",
   "peerDependencies": {
-    "koishi": "^4.8.5"
+    "koishi": "^4.10.1"
   },
   "devDependencies": {
     "@hamster-bot/constructeur": "*",
